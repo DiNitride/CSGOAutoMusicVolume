@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSGOMusicController", "CSGOMusicController\CSGOMusicController.csproj", "{960CA710-58BB-46DB-950D-BFDE53477FEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{960CA710-58BB-46DB-950D-BFDE53477FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{960CA710-58BB-46DB-950D-BFDE53477FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{960CA710-58BB-46DB-950D-BFDE53477FEA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{960CA710-58BB-46DB-950D-BFDE53477FEA}.Debug|x86.Build.0 = Debug|Any CPU
+		{960CA710-58BB-46DB-950D-BFDE53477FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{960CA710-58BB-46DB-950D-BFDE53477FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{960CA710-58BB-46DB-950D-BFDE53477FEA}.Release|x86.ActiveCfg = Release|Any CPU
+		{960CA710-58BB-46DB-950D-BFDE53477FEA}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44B34F74-A945-439C-906A-054FAB8B1325}
+	EndGlobalSection
+EndGlobal
