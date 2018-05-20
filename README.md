@@ -10,6 +10,7 @@ Automatically adjusts music levels up and down during the round depending on whe
 
 ## FAQ
 **I'm getting an error when I boot?! "A CS:GO Install could not be located"**
+
 This means that either the program couldn't automatically find your CS:GO install, and you will need to manually add the required cfg to the install folder yourself. To do this, copy the file called `gamestate_integration_musicControllApp.cfg` to `/csgo/cfg/` within your `Counter-Strike Global Offensive` install directory. You will get the error every time it loads, however if you dismiss it and continue the program will work as normal.
 
 ## Contributing
