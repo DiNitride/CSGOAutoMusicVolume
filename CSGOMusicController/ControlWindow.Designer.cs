@@ -250,6 +250,8 @@
             this.Controls.Add(this.stateLabel);
             this.Controls.Add(this.deadOrAlive);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(277, 551);
+            this.MinimumSize = new System.Drawing.Size(277, 551);
             this.Name = "ControlWindow";
             this.Text = "CS:GO Music";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ControlWindow_FormClosing);

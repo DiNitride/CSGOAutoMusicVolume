@@ -76,19 +76,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5A8069E119B4B529F2A319CC0EF55AD2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D5C3E3BCA0721F81F6A7A8D08C89F9E8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4E27A5228F9AB93F8B6BF2FB87549A0D"
+        "OwnerKey" = "8:_AA77B3DA2C90CBBDE0B0E7F6E594F56E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -100,7 +88,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AA77B3DA2C90CBBDE0B0E7F6E594F56E"
+        "OwnerKey" = "8:_4E27A5228F9AB93F8B6BF2FB87549A0D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D5C3E3BCA0721F81F6A7A8D08C89F9E8"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5A8069E119B4B529F2A319CC0EF55AD2"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -559,6 +559,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CF2BF2F6F0924FFFA5743468D2D5CEA9"
+            {
+            "Name" = "8:CSGO Music Controller"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_A2B0D6E5E0E648EEB8C73DBBFFEE8BBE"
+            "Folder" = "8:_75DDFE869EE04891AC4149B3616D72D9"
+            "WorkingFolder" = "8:_7C2AA65F5B2A4C3E992A6268B3E6611F"
+            "Icon" = "8:_6CD02D33FB724810961B48A51CBCDD92"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
