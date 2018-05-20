@@ -22,5 +22,8 @@ Start playing music in the player to start the audio session in windows and pres
 
 Ensure that the cfg was correctly loaded, follow the steps for trouble shooting #1
 
+## Building an .exe
+If you're spooked by the "Unknown Publisher" warning from Windows you'd rather opt to build the .exe from source locally rather than using an installer, you can do so with VS 2017 and simply importing the project. Switch the build to `release` from `debug` and then `build > build solution`. The .exe will be found in the project directory under `/bin/release/`
+
 ## Contributing
 If you're interesting in contributing to anything, feel free to open a issue, or fork the repo and make a PR back in with your changes. Also, before starting this project I had 0 hours of experience with C#, I learnt everything on the way, so please excuse any poor practice, please correct me!
