@@ -26,6 +26,7 @@ Global
 		{9911F8C6-01E5-4D60-9A4C-E400793EF25C}.Debug|Any CPU.ActiveCfg = Debug
 		{9911F8C6-01E5-4D60-9A4C-E400793EF25C}.Debug|x86.ActiveCfg = Debug
 		{9911F8C6-01E5-4D60-9A4C-E400793EF25C}.Release|Any CPU.ActiveCfg = Release
+		{9911F8C6-01E5-4D60-9A4C-E400793EF25C}.Release|Any CPU.Build.0 = Release
 		{9911F8C6-01E5-4D60-9A4C-E400793EF25C}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution

@@ -76,19 +76,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AA77B3DA2C90CBBDE0B0E7F6E594F56E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_58BEAC4E0A3E3BDDD8B25FDD48CD5E5F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4E27A5228F9AB93F8B6BF2FB87549A0D"
+        "OwnerKey" = "8:_5A8069E119B4B529F2A319CC0EF55AD2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -100,7 +88,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5A8069E119B4B529F2A319CC0EF55AD2"
+        "OwnerKey" = "8:_4E27A5228F9AB93F8B6BF2FB87549A0D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_58BEAC4E0A3E3BDDD8B25FDD48CD5E5F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_AA77B3DA2C90CBBDE0B0E7F6E594F56E"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -205,11 +205,6 @@
             "AssemblyAsmDisplayName" = "8:AudioSwitcher.AudioApi.CoreAudio, Version=4.0.0.308, Culture=neutral, PublicKeyToken=fda5729e2db3a64f, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4E27A5228F9AB93F8B6BF2FB87549A0D"
-                    {
-                    "Name" = "8:AudioSwitcher.AudioApi.CoreAudio.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:AudioSwitcher.AudioApi.CoreAudio.dll"
             "TargetName" = "8:"
@@ -236,11 +231,6 @@
             "AssemblyAsmDisplayName" = "8:Gameloop.Vdf, Version=0.4.4.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_58BEAC4E0A3E3BDDD8B25FDD48CD5E5F"
-                    {
-                    "Name" = "8:Gameloop.Vdf.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Gameloop.Vdf.dll"
             "TargetName" = "8:"
@@ -267,11 +257,6 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_5A8069E119B4B529F2A319CC0EF55AD2"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -318,11 +303,6 @@
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_AA77B3DA2C90CBBDE0B0E7F6E594F56E"
-                    {
-                    "Name" = "8:Newtonsoft.Json.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Newtonsoft.Json.dll"
             "TargetName" = "8:"
@@ -349,11 +329,6 @@
             "AssemblyAsmDisplayName" = "8:AudioSwitcher.AudioApi, Version=4.0.0.308, Culture=neutral, PublicKeyToken=fda5729e2db3a64f, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D5C3E3BCA0721F81F6A7A8D08C89F9E8"
-                    {
-                    "Name" = "8:AudioSwitcher.AudioApi.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:AudioSwitcher.AudioApi.dll"
             "TargetName" = "8:"
@@ -985,7 +960,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A2B0D6E5E0E648EEB8C73DBBFFEE8BBE"
             {
-            "SourcePath" = "8:..\\CSGOMusicController\\obj\\Debug\\CSGOMusicController.exe"
+            "SourcePath" = "8:..\\CSGOMusicController\\obj\\Release\\CSGOMusicController.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7C2AA65F5B2A4C3E992A6268B3E6611F"
