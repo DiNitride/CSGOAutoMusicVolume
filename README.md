@@ -2,7 +2,7 @@
 Automatically adjusts music levels up and down during the round depending on whether the player is alive or dead.
 
 ## Installation
-1. Download and run the installer
+1. [Download and run the installer](https://github.com/DiNitride/CSGOAutoMusicVolume/releases)
 2. (Optional, but recomended) The shortcut the installer made was really weird so, navigate to the install directory and create on manually and drop it on your desktop or wherever. The directory by default is `"C:\Program Files (x86)\CSGO Automatic Music Control\CSGOMusicController.exe"`
 3. Launch the program
 4. Select your music player from the drop down list, if it's not there start playing music on it and hit refresh.
