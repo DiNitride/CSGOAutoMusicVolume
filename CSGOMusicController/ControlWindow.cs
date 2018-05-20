@@ -1,18 +1,12 @@
-﻿using AudioSwitcher.AudioApi;
-using AudioSwitcher.AudioApi.CoreAudio;
+﻿using AudioSwitcher.AudioApi.CoreAudio;
 using AudioSwitcher.AudioApi.Session;
+using Gameloop.Vdf;
+using Microsoft.Win32;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -29,22 +23,140 @@ namespace CSGOMusicController
         List<IAudioSession> sessions;
         bool running = false;
         double oldVolume, deadVol, aliveVol;
+        String CSDIR = "\\steamapps\\common\\Counter-Strike Global Offensive\\";
+        String CFGDIR = "\\steamapps\\common\\Counter-Strike Global Offensive\\csgo\\cfg\\gamestate_integration_musicControllApp.cfg";
+        String SteamInstallDir;
+        String RegLocation = "HKEY_CURRENT_USER\\Software\\DiNitride\\CSGOMusicController";
+        CoreAudioController AudioController;
 
         public ControlWindow()
         {
             InitializeComponent();
+            CheckSetup();
             postListener = new HttpListener();
             postListener.Prefixes.Add("http://127.0.0.1:5659/");
             loop = new Thread(new ThreadStart(PollForData));
             LoadFromFile();
+        }
+
+        private void CheckSetup()
+        {
+            String steamInstall = (String)Registry.GetValue("HKEY_CURRENT_USER\\Software\\Valve\\Steam", "SteamPath", "NA");
+            Console.WriteLine(steamInstall);
+            String steamGameLocations = File.ReadAllText(steamInstall + "\\steamapps\\libraryfolders.vdf");
+            Console.WriteLine(steamGameLocations);
+            // Volves weird VDF file format uses 1, 2, 3 as keys, which you then can't access through the created object so, I just replaced the first 8 with the word
+            // So I can access through that
+            // If you have more than 8 Steam Game Libraries, you'll have to do things manually.
+            steamGameLocations = steamGameLocations.Replace("1", "One").Replace("2", "Two").Replace("3", "Three").Replace("4", "Four").Replace("5", "Five").Replace("6", "Six").Replace("7", "Seven").Replace("8", "Eight");
+            Console.WriteLine(steamGameLocations);
+            dynamic GameLocations = VdfConvert.Deserialize(steamGameLocations);
+            try
+            {
+                if (CheckCSFolder(steamInstall)) {
+                    SteamInstallDir = steamInstall;
+                    Console.WriteLine("CSGO IN DEFAULT AT {0}", SteamInstallDir);
+                    CheckCfg();
+                }
+                else if (CheckCSFolder(GameLocations.Value.One.ToString()))
+                {
+                    SteamInstallDir = GameLocations.Value.One.ToString();
+                    Console.WriteLine("CSGO IN DIR 1 AT {0}", SteamInstallDir);
+                    CheckCfg();
+                }
+                else if (CheckCSFolder(GameLocations.Value.Two.ToString()))
+                {
+                    SteamInstallDir = GameLocations.Value.Two.ToString();
+                    Console.WriteLine("CSGO IN DIR 2 AT {0}", SteamInstallDir);
+
+                    CheckCfg();
+                }
+                else if (CheckCSFolder(GameLocations.Value.Three.ToString()))
+                {
+                    SteamInstallDir = GameLocations.Value.Three.ToString();
+                    Console.WriteLine("CSGO IN DIR 3 AT {0}", SteamInstallDir);
+
+                    CheckCfg();
+                }
+                else if (CheckCSFolder(GameLocations.Value.Four.ToString()))
+                {
+                    SteamInstallDir = GameLocations.Value.Four.ToString();
+                    Console.WriteLine("CSGO IN DIR 4 AT {0}", SteamInstallDir);
+
+                    CheckCfg();
+                }
+                else if (CheckCSFolder(GameLocations.Value.Five.ToString()))
+                {
+                    SteamInstallDir = GameLocations.Value.Five.ToString();
+                    Console.WriteLine("CSGO IN DIR 5 AT {0}", SteamInstallDir);
+
+                    CheckCfg();
+                }
+                else if (CheckCSFolder(GameLocations.Value.Six.ToString()))
+                {
+
+                    SteamInstallDir = GameLocations.Value.Six.ToString();
+                    Console.WriteLine("CSGO IN DIR 6 AT {0}", SteamInstallDir);
+
+                    CheckCfg();
+                }
+                else if (CheckCSFolder(GameLocations.Value.Seven.ToString()))
+                {
+                    SteamInstallDir = GameLocations.Value.Seven.ToString();
+                    Console.WriteLine("CSGO IN DIR 7 AT {0}", SteamInstallDir);
+
+                    CheckCfg();
+                }
+                else if (CheckCSFolder(GameLocations.Value.Eight.ToString()))
+                {
+                    SteamInstallDir = GameLocations.Value.Eight.ToString();
+                    Console.WriteLine("CSGO IN DIR 8 AT {0}", SteamInstallDir);
+
+                    CheckCfg();
+                }
+                else
+                {
+                    CSNotFoundError();
+                }
+            } catch (KeyNotFoundException)
+            {
+                CSNotFoundError();
+            }
+
+        }
+
+        private void CSNotFoundError()
+        {
+            Console.WriteLine("COULD NOT FIND CSGO!!!!!!!");
+            MessageBox.Show("Please manually place 'gamestate_integration_musicControllApp.cfg' inside your CS:GO Game directory, in the location ../steamapps/common/<INSTALL_DIR>/csgo/cfg/", "A CS:GO Install could not be located",
+            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
             
+        private bool CheckCSFolder(String installDir)
+        {
+            return (Directory.Exists(installDir + CSDIR));
+        }
+
+        private void CheckCfg()
+        {
+            if (File.Exists(SteamInstallDir + CFGDIR))
+            {
+                Console.WriteLine("CFG EXISTS");
+            } else
+            {
+                Console.WriteLine("CFG DOESN'T EXIST, WILL CREATE ONE");
+                String cfg = File.ReadAllText("gamestate_integration_musicControllApp.cfg");
+                File.WriteAllText(SteamInstallDir + CFGDIR, cfg);
+            }
         }
 
         private void LoadFromFile()
         {   
             try
             {
-                string readText = File.ReadAllText("automusic.config");
+
+                String readText = (String) Registry.GetValue(RegLocation, "preference", "100,50");
+
                 Console.WriteLine("Loaded Config: {0}", readText);
                 var vols = readText.Split(new string[] { "," }, StringSplitOptions.None);
                 Console.WriteLine("Dead Volume: {0} Alive Volume: {1}", vols[0], vols[1]);
@@ -92,9 +204,8 @@ namespace CSGOMusicController
 
         private void SaveFile()
         {
-
             string createText = deadVol + "," + aliveVol;
-            File.WriteAllText("automusic.config", createText);
+            Registry.SetValue(RegLocation, "preference", createText);
         }
 
         public CoreAudioController Controller
@@ -108,11 +219,19 @@ namespace CSGOMusicController
             Console.WriteLine("Starting Listen Server");
             postListener.Start();
             loop.Start();
-            CoreAudioController Controller = new CoreAudioController();
+            AudioController = new CoreAudioController();
             sessions = new List<IAudioSession>();
+            RefreshAudioSessions();
+        }
+
+        private void RefreshAudioSessions()
+        {
+            Console.WriteLine("Refreshing Session List");
+            sessions.Clear();
+            AudioDevicesList.Items.Clear();
             Console.WriteLine("Audio Sessions Discovered:");
-            foreach (var audioSession in Controller.DefaultPlaybackDevice.GetCapability<IAudioSessionController>())
-            {   
+            foreach (var audioSession in AudioController.DefaultPlaybackDevice.GetCapability<IAudioSessionController>())
+            {
                 String name = audioSession.DisplayName;
                 if (!(name.Equals("")))
                 {
@@ -260,31 +379,55 @@ namespace CSGOMusicController
                 // Program is idle
                 if (player == null)
                 {
+                    MessageBox.Show("Please select one from the dropdown menu.", "No Media player selected!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 oldVolume = player.Volume;
                 StartStopToggle.Text = "Stop";
                 AudioDevicesList.Enabled = false;
                 running = true;
+                UpdateVolumeManually();
             }
+        }
+
+        private void UpdateVolumeManually()
+        {
+            if (health > 0)
+            {
+                OnAlive();
+            }
+            else
+            {
+                OnDeath();
+            }
+        }
+
+        private void Refresh_Click(object sender, EventArgs e)
+        {
+            RefreshAudioSessions();
+        }
+
+        private void GHLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/DiNitride");
+        }
+
+        private void SourceCode_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/DiNitride/CSGOAutoMusicVolume");
         }
 
         private void aliveVolumeInp_ValueChanged(object sender, EventArgs e)
         {
             aliveVol = (double) aliveVolumeInp.Value;
-            if (health > 0)
-            {
-                OnAlive();
-            }
+            UpdateVolumeManually();
         }
 
         private void deadVolumeInp_ValueChanged(object sender, EventArgs e)
         {
             deadVol = (double) deadVolumeInp.Value;
-            if (health == 0)
-            {
-                OnDeath();
-            }
+            UpdateVolumeManually();
         }
     }
 
