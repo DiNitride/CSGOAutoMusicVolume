@@ -3,10 +3,9 @@ Automatically adjusts music levels up and down during the round depending on whe
 
 ## Installation
 1. [Download and run the installer](https://github.com/DiNitride/CSGOAutoMusicVolume/releases)
-2. (Optional, but recomended) The shortcut the installer made was really weird so, navigate to the install directory and create on manually and drop it on your desktop or wherever. The directory by default is `"C:\Program Files (x86)\CSGO Automatic Music Control\CSGOMusicController.exe"`
-3. Launch the program
-4. Select your music player from the drop down list, if it's not there start playing music on it and hit refresh.
-5. Boot CS:GO and once the game is loaded you can click start on the program. Once you're in-game, it may take 10-20 seconds for CS:GO to start sending the updates to the program and for it to start communicating.
+2. Launch the program
+3. Select your music player from the drop down list, if it's not there start playing music on it and hit refresh.
+4. Boot CS:GO and once the game is loaded you can click start on the program. Once you're in-game, it may take 10-20 seconds for CS:GO to start sending the updates to the program and for it to start communicating.
 
 ## Troubleshooting
 ### #1-  I'm getting an error when I boot?! "A CS:GO Install could not be located"
