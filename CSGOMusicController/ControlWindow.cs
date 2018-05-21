@@ -233,6 +233,10 @@ namespace CSGOMusicController
             foreach (var audioSession in AudioController.DefaultPlaybackDevice.GetCapability<IAudioSessionController>())
             {
                 String name = audioSession.DisplayName;
+                if (name == null)
+                {
+                    continue;
+                }
                 if (!(name.Equals("")))
                 {
                     AudioDevicesList.Items.Add(name);
@@ -270,20 +274,30 @@ namespace CSGOMusicController
 
         private int GetHealth(HttpListenerRequest r)
         {
-            System.IO.Stream body = r.InputStream;
+            Stream body = r.InputStream;
             System.Text.Encoding encoding = r.ContentEncoding;
-            System.IO.StreamReader reader = new System.IO.StreamReader(body, encoding);
+            StreamReader reader = new StreamReader(body, encoding);
+            DataJson d;
             string s = reader.ReadToEnd();
+            Console.WriteLine("===== NEW JSON DATA =====\n{0}\n=========================", s);
             body.Close();
             reader.Close();
-            DataJson d = JsonConvert.DeserializeObject<DataJson>(s);
-            try
+            d = JsonConvert.DeserializeObject<DataJson>(s);
+            if (d.Player.ID == d.Provider.ID)
             {
-                return d.Player.State.Health;
-            } catch (NullReferenceException)
-            {
-                return 0;
+                try
+                {
+                    return d.Player.State.Health;
+                }
+                catch (NullReferenceException)
+                {
+                    return 0;
+                }
+            } else {
+                Console.WriteLine("INFO -> Player is spectating, ID's do not match");
+                return 1000;
             }
+            
             
         }
 
@@ -332,12 +346,16 @@ namespace CSGOMusicController
                     if (request.HttpMethod != "POST") { continue; }
                     health = GetHealth(request);
                     Console.WriteLine("Player Health: {0}", health);
-                    if (health > 0)
+                    if (health != 1000)
                     {
-                        OnAlive();
-                    } else
-                    {
-                        OnDeath();
+                        if (health > 0)
+                        {
+                            OnAlive();
+                        }
+                        else
+                        {
+                            OnDeath();
+                        }
                     }
                     response = context.Response;
                     response.Close();
@@ -393,6 +411,7 @@ namespace CSGOMusicController
 
         private void UpdateVolumeManually()
         {
+            if (health == 1000) { return; }
             if (health > 0)
             {
                 OnAlive();
@@ -438,12 +457,18 @@ namespace CSGOMusicController
 
         [JsonProperty("previously")]
         public PreviouslyJson Previosuly { get; set; }
+
+        [JsonProperty("provider")]
+        public ProviderJson Provider { get; set; }
     }
 
     public class PlayerJson
     {
         [JsonProperty("state")]
         public StateJson State { get; set; }
+
+        [JsonProperty("steamid")]
+        public String ID { get; set; }
     }
 
     public class PreviouslyJson
@@ -456,6 +481,12 @@ namespace CSGOMusicController
     {
         [JsonProperty("health")]
         public int Health { get; set; }
+    }
+
+    public class ProviderJson
+    {
+        [JsonProperty("steamid")]
+        public String ID { get; set; }
     }
 
 }

@@ -39,6 +39,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_94826115F0764C82A6B8BA0015065CEA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A2B0D6E5E0E648EEB8C73DBBFFEE8BBE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -59,12 +65,6 @@
         {
         "MsmKey" = "8:_D5C3E3BCA0721F81F6A7A8D08C89F9E8"
         "OwnerKey" = "8:_4E27A5228F9AB93F8B6BF2FB87549A0D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_EFAB7DFC779647998568CD8466154FD1"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -205,6 +205,11 @@
             "AssemblyAsmDisplayName" = "8:AudioSwitcher.AudioApi.CoreAudio, Version=4.0.0.308, Culture=neutral, PublicKeyToken=fda5729e2db3a64f, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_4E27A5228F9AB93F8B6BF2FB87549A0D"
+                    {
+                    "Name" = "8:AudioSwitcher.AudioApi.CoreAudio.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:AudioSwitcher.AudioApi.CoreAudio.dll"
             "TargetName" = "8:"
@@ -231,6 +236,11 @@
             "AssemblyAsmDisplayName" = "8:Gameloop.Vdf, Version=0.4.4.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_58BEAC4E0A3E3BDDD8B25FDD48CD5E5F"
+                    {
+                    "Name" = "8:Gameloop.Vdf.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Gameloop.Vdf.dll"
             "TargetName" = "8:"
@@ -257,6 +267,11 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
+                    "_5A8069E119B4B529F2A319CC0EF55AD2"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -296,6 +311,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_94826115F0764C82A6B8BA0015065CEA"
+            {
+            "SourcePath" = "8:..\\CSGOMusicController\\resources\\gamestate_integration_musicControllApp.cfg"
+            "TargetName" = "8:gamestate_integration_musicControllApp.cfg"
+            "Tag" = "8:"
+            "Folder" = "8:_7C2AA65F5B2A4C3E992A6268B3E6611F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AA77B3DA2C90CBBDE0B0E7F6E594F56E"
             {
             "AssemblyRegister" = "3:1"
@@ -303,6 +338,11 @@
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_AA77B3DA2C90CBBDE0B0E7F6E594F56E"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Newtonsoft.Json.dll"
             "TargetName" = "8:"
@@ -329,6 +369,11 @@
             "AssemblyAsmDisplayName" = "8:AudioSwitcher.AudioApi, Version=4.0.0.308, Culture=neutral, PublicKeyToken=fda5729e2db3a64f, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_D5C3E3BCA0721F81F6A7A8D08C89F9E8"
+                    {
+                    "Name" = "8:AudioSwitcher.AudioApi.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:AudioSwitcher.AudioApi.dll"
             "TargetName" = "8:"
@@ -346,26 +391,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EFAB7DFC779647998568CD8466154FD1"
-            {
-            "SourcePath" = "8:..\\CSGOMusicController\\resources\\gamestate_integration_musicControllApp.cfg"
-            "TargetName" = "8:gamestate_integration_musicControllApp.cfg"
-            "Tag" = "8:"
-            "Folder" = "8:_7C2AA65F5B2A4C3E992A6268B3E6611F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -424,15 +449,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:CSGO Automatic Music Control"
-        "ProductCode" = "8:{D530159E-4B2A-4751-B06A-CA1A07385928}"
-        "PackageCode" = "8:{BE361407-1A4C-44D6-A928-6A19064DEBC6}"
+        "ProductCode" = "8:{377EB726-DD8A-487D-8051-96698FEE7A7F}"
+        "PackageCode" = "8:{FC541714-858B-43E9-9618-39C8C320A3CC}"
         "UpgradeCode" = "8:{70601B69-FEEE-473C-8A56-0D497552E7C3}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.0.9"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:DiNitride"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://github.com/DiNitride/CSGOAutoMusicVolume"
