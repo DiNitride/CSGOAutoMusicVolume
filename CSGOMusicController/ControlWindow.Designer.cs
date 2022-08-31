@@ -47,15 +47,18 @@
             this.Credit = new System.Windows.Forms.Label();
             this.GHLink = new System.Windows.Forms.LinkLabel();
             this.SourceCode = new System.Windows.Forms.LinkLabel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.aliveVolumeInp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deadVolumeInp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // deadOrAlive
             // 
             this.deadOrAlive.AutoSize = true;
             this.deadOrAlive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deadOrAlive.Location = new System.Drawing.Point(171, 178);
+            this.deadOrAlive.Location = new System.Drawing.Point(171, 192);
             this.deadOrAlive.Name = "deadOrAlive";
             this.deadOrAlive.Size = new System.Drawing.Size(42, 17);
             this.deadOrAlive.TabIndex = 3;
@@ -65,7 +68,7 @@
             // 
             this.stateLabel.AutoSize = true;
             this.stateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stateLabel.Location = new System.Drawing.Point(120, 178);
+            this.stateLabel.Location = new System.Drawing.Point(120, 192);
             this.stateLabel.Name = "stateLabel";
             this.stateLabel.Size = new System.Drawing.Size(45, 17);
             this.stateLabel.TabIndex = 4;
@@ -75,7 +78,7 @@
             // 
             this.healthLabel.AutoSize = true;
             this.healthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.healthLabel.Location = new System.Drawing.Point(8, 178);
+            this.healthLabel.Location = new System.Drawing.Point(8, 192);
             this.healthLabel.Name = "healthLabel";
             this.healthLabel.Size = new System.Drawing.Size(53, 17);
             this.healthLabel.TabIndex = 5;
@@ -85,7 +88,7 @@
             // 
             this.healthIntLabel.AutoSize = true;
             this.healthIntLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.healthIntLabel.Location = new System.Drawing.Point(67, 178);
+            this.healthIntLabel.Location = new System.Drawing.Point(67, 192);
             this.healthIntLabel.Name = "healthIntLabel";
             this.healthIntLabel.Size = new System.Drawing.Size(16, 17);
             this.healthIntLabel.TabIndex = 6;
@@ -93,7 +96,7 @@
             // 
             // healthBar
             // 
-            this.healthBar.Location = new System.Drawing.Point(12, 201);
+            this.healthBar.Location = new System.Drawing.Point(12, 215);
             this.healthBar.Name = "healthBar";
             this.healthBar.Size = new System.Drawing.Size(237, 29);
             this.healthBar.TabIndex = 7;
@@ -112,7 +115,7 @@
             // StartStopToggle
             // 
             this.StartStopToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartStopToggle.Location = new System.Drawing.Point(12, 236);
+            this.StartStopToggle.Location = new System.Drawing.Point(12, 250);
             this.StartStopToggle.Name = "StartStopToggle";
             this.StartStopToggle.Size = new System.Drawing.Size(237, 44);
             this.StartStopToggle.TabIndex = 9;
@@ -189,7 +192,7 @@
             // infoLabel
             // 
             this.infoLabel.ForeColor = System.Drawing.Color.Red;
-            this.infoLabel.Location = new System.Drawing.Point(12, 283);
+            this.infoLabel.Location = new System.Drawing.Point(12, 297);
             this.infoLabel.Name = "infoLabel";
             this.infoLabel.Size = new System.Drawing.Size(237, 180);
             this.infoLabel.TabIndex = 17;
@@ -198,7 +201,7 @@
             // Credit
             // 
             this.Credit.AutoSize = true;
-            this.Credit.Location = new System.Drawing.Point(12, 463);
+            this.Credit.Location = new System.Drawing.Point(12, 477);
             this.Credit.Name = "Credit";
             this.Credit.Size = new System.Drawing.Size(41, 13);
             this.Credit.TabIndex = 18;
@@ -207,7 +210,7 @@
             // GHLink
             // 
             this.GHLink.AutoSize = true;
-            this.GHLink.Location = new System.Drawing.Point(50, 463);
+            this.GHLink.Location = new System.Drawing.Point(50, 477);
             this.GHLink.Name = "GHLink";
             this.GHLink.Size = new System.Drawing.Size(47, 13);
             this.GHLink.TabIndex = 19;
@@ -218,7 +221,7 @@
             // SourceCode
             // 
             this.SourceCode.AutoSize = true;
-            this.SourceCode.Location = new System.Drawing.Point(13, 480);
+            this.SourceCode.Location = new System.Drawing.Point(13, 494);
             this.SourceCode.Name = "SourceCode";
             this.SourceCode.Size = new System.Drawing.Size(135, 13);
             this.SourceCode.TabIndex = 20;
@@ -226,11 +229,42 @@
             this.SourceCode.Text = "Source available on Github";
             this.SourceCode.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SourceCode_LinkClicked);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Location = new System.Drawing.Point(168, 165);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(81, 20);
+            this.numericUpDown1.TabIndex = 21;
+            this.numericUpDown1.ThousandsSeparator = true;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 165);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 17);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Volume up delay msec";
+            // 
             // ControlWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 512);
+            this.ClientSize = new System.Drawing.Size(261, 513);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.SourceCode);
             this.Controls.Add(this.GHLink);
             this.Controls.Add(this.Credit);
@@ -258,6 +292,7 @@
             this.Load += new System.EventHandler(this.ControlWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.aliveVolumeInp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deadVolumeInp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,6 +317,8 @@
         private System.Windows.Forms.Label Credit;
         private System.Windows.Forms.LinkLabel GHLink;
         private System.Windows.Forms.LinkLabel SourceCode;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

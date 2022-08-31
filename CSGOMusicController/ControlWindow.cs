@@ -1,4 +1,4 @@
-using AudioSwitcher.AudioApi.CoreAudio;
+﻿using AudioSwitcher.AudioApi.CoreAudio;
 using AudioSwitcher.AudioApi.Session;
 using Gameloop.Vdf;
 using Microsoft.Win32;
