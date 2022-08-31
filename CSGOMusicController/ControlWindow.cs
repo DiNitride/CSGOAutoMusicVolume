@@ -1,4 +1,4 @@
-﻿using AudioSwitcher.AudioApi.CoreAudio;
+using AudioSwitcher.AudioApi.CoreAudio;
 using AudioSwitcher.AudioApi.Session;
 using Gameloop.Vdf;
 using Microsoft.Win32;
@@ -23,6 +23,7 @@ namespace CSGOMusicController
         List<IAudioSession> sessions;
         bool running = false;
         double oldVolume, deadVol, aliveVol;
+        int deadDelay;
         String CSDIR = "\\steamapps\\common\\Counter-Strike Global Offensive\\";
         String CFGDIR = "\\steamapps\\common\\Counter-Strike Global Offensive\\csgo\\cfg\\gamestate_integration_musicControllApp.cfg";
         String SteamInstallDir;
@@ -155,12 +156,12 @@ namespace CSGOMusicController
             try
             {
 
-                String readText = (String) Registry.GetValue(RegLocation, "preference", "100,50");
+                String readText = (String) Registry.GetValue(RegLocation, "preference", "100,50,2500");
 
                 Console.WriteLine("Loaded Config: {0}", readText);
                 var vols = readText.Split(new string[] { "," }, StringSplitOptions.None);
-                Console.WriteLine("Dead Volume: {0} Alive Volume: {1}", vols[0], vols[1]);
-                int dVolT, aVolT;
+                Console.WriteLine("Dead Volume: {0} Alive Volume: {1} Dead Delay: {2}", vols[0], vols[1], vols[2]);
+                int dVolT, aVolT, deVolT;
                 if (Int32.TryParse(vols[0], out dVolT))
                 {
                     Console.WriteLine("Success Converting Dead");
@@ -181,6 +182,16 @@ namespace CSGOMusicController
                     }
                     aliveVol = aVolT;
                 }
+                if (Int32.TryParse(vols[2], out deVolT))
+                {
+                    Console.WriteLine("Success Converting Alive");
+                    if ((deVolT > 5000) || (deVolT < 0))
+                    {
+                        Console.WriteLine("Loaded Alive Value OOB");
+                        deVolT = 50;
+                    }
+                    deadDelay = deVolT;
+                }
                 UpdateVolumeGui();
             } catch (FileNotFoundException)
             {
@@ -191,8 +202,9 @@ namespace CSGOMusicController
 
         private void defaultVolumes()
         {
-            deadVol = 80;
-            aliveVol = 15;
+            deadVol = 100;
+            aliveVol = 50;
+            deadDelay = 2500;
             UpdateVolumeGui();
         }
 
@@ -200,11 +212,12 @@ namespace CSGOMusicController
         {
             deadVolumeInp.Value = (int) deadVol;
             aliveVolumeInp.Value = (int) aliveVol;
+            numericUpDown1.Value = (int) deadDelay;
         }
 
         private void SaveFile()
         {
-            string createText = deadVol + "," + aliveVol;
+            string createText = deadVol + "," + aliveVol + "," + deadDelay;
             Registry.SetValue(RegLocation, "preference", createText);
         }
 
@@ -249,12 +262,12 @@ namespace CSGOMusicController
         private void OnDeath()
         {
             Console.WriteLine("Player Dead!");
-            Thread.Sleep(5000);
             SetStateText("Dead");
             SetHealth(health);
             if (running)
             {
                 Console.WriteLine("Set audio volume to {0}", deadVol);
+                Thread.Sleep(deadDelay);
                 player.SetVolumeAsync(deadVol);
             }
             
@@ -346,7 +359,7 @@ namespace CSGOMusicController
                     request = context.Request;
                     if (request.HttpMethod != "POST") { continue; }
                     health = GetHealth(request);
-                    Console.WriteLine("Player Health: {0}", health);
+                    Console.WriteLine("Player Health: {0}%", health);
                     if (health != 1000)
                     {
                         if (health > 0)
@@ -436,6 +449,11 @@ namespace CSGOMusicController
         private void SourceCode_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/DiNitride/CSGOAutoMusicVolume");
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            deadDelay = (int)numericUpDown1.Value;
         }
 
         private void aliveVolumeInp_ValueChanged(object sender, EventArgs e)
