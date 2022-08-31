@@ -191,8 +191,8 @@ namespace CSGOMusicController
 
         private void defaultVolumes()
         {
-            deadVol = 100;
-            aliveVol = 50;
+            deadVol = 80;
+            aliveVol = 15;
             UpdateVolumeGui();
         }
 
@@ -249,6 +249,7 @@ namespace CSGOMusicController
         private void OnDeath()
         {
             Console.WriteLine("Player Dead!");
+            Thread.Sleep(5000);
             SetStateText("Dead");
             SetHealth(health);
             if (running)
