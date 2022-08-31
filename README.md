@@ -1,8 +1,10 @@
 # CSGO Music Controller
 Automatically adjusts music levels up and down during the round depending on whether the player is alive or dead.
 
+![Untitled3](https://user-images.githubusercontent.com/47089904/187646503-48de70a6-ba68-4656-91cf-36666f472014.jpg)
+
 ## Installation
-1. [Download and run the installer](https://github.com/DiNitride/CSGOAutoMusicVolume/releases)
+1. [Download and run the installer](https://github.com/Welsyntoffie/CSGOAutoMusicVolume/releases)
 2. Launch the program
 3. Select your music player from the drop down list, if it's not there start playing music on it and hit refresh.
 4. Boot CS:GO and once the game is loaded you can click start on the program. Once you're in-game, it may take 10-20 seconds for CS:GO to start sending the updates to the program and for it to start communicating.
