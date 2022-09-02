@@ -1,7 +1,9 @@
 # CSGO Music Controller
 Automatically adjusts music levels up and down during the round depending on whether the player is alive or dead.
 
-![Untitled3](https://user-images.githubusercontent.com/47089904/187646503-48de70a6-ba68-4656-91cf-36666f472014.jpg)
+Custom delay after player died when music should be set to Dead Volume. Time is milliseconds. Min 0 Max 5000.
+
+![Untitled31](https://user-images.githubusercontent.com/47089904/188231608-cda019ca-ded3-48ca-8921-f93db5f9eb69.jpg)
 
 ## Installation
 1. [Download and run the installer](https://github.com/Welsyntoffie/CSGOAutoMusicVolume/releases)
