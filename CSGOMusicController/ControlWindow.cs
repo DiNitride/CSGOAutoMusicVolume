@@ -359,7 +359,7 @@ namespace CSGOMusicController
                     request = context.Request;
                     if (request.HttpMethod != "POST") { continue; }
                     health = GetHealth(request);
-                    Console.WriteLine("Player Health: {0}%", health);
+                    Console.WriteLine("Player Health: {0}", health);
                     if (health != 1000)
                     {
                         if (health > 0)
@@ -454,6 +454,11 @@ namespace CSGOMusicController
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             deadDelay = (int)numericUpDown1.Value;
+        }
+
+        private void Forksource_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Welsyntoffie/CSGOAutoMusicVolume");
         }
 
         private void aliveVolumeInp_ValueChanged(object sender, EventArgs e)

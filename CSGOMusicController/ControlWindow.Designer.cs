@@ -41,17 +41,20 @@
             this.AudioDeviceLabel = new System.Windows.Forms.Label();
             this.AliveVolumeLabel = new System.Windows.Forms.Label();
             this.DeadVolumeLabel = new System.Windows.Forms.Label();
-            this.Title = new System.Windows.Forms.Label();
             this.RefreshButton = new System.Windows.Forms.Button();
-            this.infoLabel = new System.Windows.Forms.Label();
             this.Credit = new System.Windows.Forms.Label();
             this.GHLink = new System.Windows.Forms.LinkLabel();
             this.SourceCode = new System.Windows.Forms.LinkLabel();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.Forksource = new System.Windows.Forms.LinkLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.aliveVolumeInp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deadVolumeInp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // deadOrAlive
@@ -98,7 +101,7 @@
             // 
             this.healthBar.Location = new System.Drawing.Point(12, 215);
             this.healthBar.Name = "healthBar";
-            this.healthBar.Size = new System.Drawing.Size(237, 29);
+            this.healthBar.Size = new System.Drawing.Size(237, 15);
             this.healthBar.TabIndex = 7;
             // 
             // AudioDevicesList
@@ -114,10 +117,10 @@
             // 
             // StartStopToggle
             // 
-            this.StartStopToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartStopToggle.Location = new System.Drawing.Point(12, 250);
+            this.StartStopToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartStopToggle.Location = new System.Drawing.Point(12, 236);
             this.StartStopToggle.Name = "StartStopToggle";
-            this.StartStopToggle.Size = new System.Drawing.Size(237, 44);
+            this.StartStopToggle.Size = new System.Drawing.Size(237, 29);
             this.StartStopToggle.TabIndex = 9;
             this.StartStopToggle.Text = "Start";
             this.StartStopToggle.UseVisualStyleBackColor = true;
@@ -125,17 +128,17 @@
             // 
             // aliveVolumeInp
             // 
-            this.aliveVolumeInp.Location = new System.Drawing.Point(107, 116);
+            this.aliveVolumeInp.Location = new System.Drawing.Point(168, 111);
             this.aliveVolumeInp.Name = "aliveVolumeInp";
-            this.aliveVolumeInp.Size = new System.Drawing.Size(142, 20);
+            this.aliveVolumeInp.Size = new System.Drawing.Size(81, 20);
             this.aliveVolumeInp.TabIndex = 10;
             this.aliveVolumeInp.ValueChanged += new System.EventHandler(this.aliveVolumeInp_ValueChanged);
             // 
             // deadVolumeInp
             // 
-            this.deadVolumeInp.Location = new System.Drawing.Point(107, 139);
+            this.deadVolumeInp.Location = new System.Drawing.Point(168, 135);
             this.deadVolumeInp.Name = "deadVolumeInp";
-            this.deadVolumeInp.Size = new System.Drawing.Size(142, 20);
+            this.deadVolumeInp.Size = new System.Drawing.Size(81, 20);
             this.deadVolumeInp.TabIndex = 11;
             this.deadVolumeInp.ValueChanged += new System.EventHandler(this.deadVolumeInp_ValueChanged);
             // 
@@ -153,7 +156,7 @@
             // 
             this.AliveVolumeLabel.AutoSize = true;
             this.AliveVolumeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AliveVolumeLabel.Location = new System.Drawing.Point(12, 116);
+            this.AliveVolumeLabel.Location = new System.Drawing.Point(12, 113);
             this.AliveVolumeLabel.Name = "AliveVolumeLabel";
             this.AliveVolumeLabel.Size = new System.Drawing.Size(89, 17);
             this.AliveVolumeLabel.TabIndex = 13;
@@ -163,45 +166,26 @@
             // 
             this.DeadVolumeLabel.AutoSize = true;
             this.DeadVolumeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeadVolumeLabel.Location = new System.Drawing.Point(12, 139);
+            this.DeadVolumeLabel.Location = new System.Drawing.Point(12, 137);
             this.DeadVolumeLabel.Name = "DeadVolumeLabel";
             this.DeadVolumeLabel.Size = new System.Drawing.Size(93, 17);
             this.DeadVolumeLabel.TabIndex = 14;
             this.DeadVolumeLabel.Text = "Dead Volume";
             // 
-            // Title
-            // 
-            this.Title.AutoSize = true;
-            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.Location = new System.Drawing.Point(12, 9);
-            this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(224, 25);
-            this.Title.TabIndex = 15;
-            this.Title.Text = "CS:GO Music Controller";
-            // 
             // RefreshButton
             // 
-            this.RefreshButton.Location = new System.Drawing.Point(12, 77);
+            this.RefreshButton.Location = new System.Drawing.Point(103, 75);
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(237, 33);
+            this.RefreshButton.Size = new System.Drawing.Size(146, 22);
             this.RefreshButton.TabIndex = 16;
             this.RefreshButton.Text = "Refresh Audio Sessions";
             this.RefreshButton.UseVisualStyleBackColor = true;
             this.RefreshButton.Click += new System.EventHandler(this.Refresh_Click);
             // 
-            // infoLabel
-            // 
-            this.infoLabel.ForeColor = System.Drawing.Color.Red;
-            this.infoLabel.Location = new System.Drawing.Point(12, 297);
-            this.infoLabel.Name = "infoLabel";
-            this.infoLabel.Size = new System.Drawing.Size(237, 180);
-            this.infoLabel.TabIndex = 17;
-            this.infoLabel.Text = resources.GetString("infoLabel.Text");
-            // 
             // Credit
             // 
             this.Credit.AutoSize = true;
-            this.Credit.Location = new System.Drawing.Point(12, 477);
+            this.Credit.Location = new System.Drawing.Point(12, 279);
             this.Credit.Name = "Credit";
             this.Credit.Size = new System.Drawing.Size(41, 13);
             this.Credit.TabIndex = 18;
@@ -210,7 +194,7 @@
             // GHLink
             // 
             this.GHLink.AutoSize = true;
-            this.GHLink.Location = new System.Drawing.Point(50, 477);
+            this.GHLink.Location = new System.Drawing.Point(50, 279);
             this.GHLink.Name = "GHLink";
             this.GHLink.Size = new System.Drawing.Size(47, 13);
             this.GHLink.TabIndex = 19;
@@ -221,7 +205,7 @@
             // SourceCode
             // 
             this.SourceCode.AutoSize = true;
-            this.SourceCode.Location = new System.Drawing.Point(13, 494);
+            this.SourceCode.Location = new System.Drawing.Point(13, 296);
             this.SourceCode.Name = "SourceCode";
             this.SourceCode.Size = new System.Drawing.Size(135, 13);
             this.SourceCode.TabIndex = 20;
@@ -236,7 +220,7 @@
             0,
             0,
             0});
-            this.numericUpDown1.Location = new System.Drawing.Point(168, 165);
+            this.numericUpDown1.Location = new System.Drawing.Point(168, 159);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -252,25 +236,57 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 165);
+            this.label1.Location = new System.Drawing.Point(12, 161);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 17);
             this.label1.TabIndex = 22;
             this.label1.Text = "Volume up delay msec";
             // 
+            // Forksource
+            // 
+            this.Forksource.AutoSize = true;
+            this.Forksource.Location = new System.Drawing.Point(171, 296);
+            this.Forksource.Name = "Forksource";
+            this.Forksource.Size = new System.Drawing.Size(65, 13);
+            this.Forksource.TabIndex = 23;
+            this.Forksource.TabStop = true;
+            this.Forksource.Text = "Fork Source";
+            this.Forksource.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Forksource_LinkClicked_1);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CSGOMusicController.Properties.Resources.Untitled6;
+            this.pictureBox2.Location = new System.Drawing.Point(11, 312);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(238, 46);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 25;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CSGOMusicController.Properties.Resources.Untitled5;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(238, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
             // ControlWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 513);
+            this.ClientSize = new System.Drawing.Size(261, 363);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Forksource);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.SourceCode);
             this.Controls.Add(this.GHLink);
             this.Controls.Add(this.Credit);
-            this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.RefreshButton);
-            this.Controls.Add(this.Title);
             this.Controls.Add(this.DeadVolumeLabel);
             this.Controls.Add(this.AliveVolumeLabel);
             this.Controls.Add(this.AudioDeviceLabel);
@@ -284,8 +300,8 @@
             this.Controls.Add(this.stateLabel);
             this.Controls.Add(this.deadOrAlive);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(277, 551);
-            this.MinimumSize = new System.Drawing.Size(277, 551);
+            this.MaximumSize = new System.Drawing.Size(277, 510);
+            this.MinimumSize = new System.Drawing.Size(277, 361);
             this.Name = "ControlWindow";
             this.Text = "CS:GO Music";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ControlWindow_FormClosing);
@@ -293,6 +309,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.aliveVolumeInp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deadVolumeInp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,14 +329,15 @@
         private System.Windows.Forms.Label AudioDeviceLabel;
         private System.Windows.Forms.Label AliveVolumeLabel;
         private System.Windows.Forms.Label DeadVolumeLabel;
-        private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Button RefreshButton;
-        private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.Label Credit;
         private System.Windows.Forms.LinkLabel GHLink;
         private System.Windows.Forms.LinkLabel SourceCode;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel Forksource;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
