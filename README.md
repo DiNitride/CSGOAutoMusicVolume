@@ -1,8 +1,12 @@
 # CSGO Music Controller
 Automatically adjusts music levels up and down during the round depending on whether the player is alive or dead.
 
+Custom delay after player died when music should be set to Dead Volume. Time is milliseconds. Min 0 Max 5000.
+
+![Untitled31](https://user-images.githubusercontent.com/47089904/188231608-cda019ca-ded3-48ca-8921-f93db5f9eb69.jpg)
+
 ## Installation
-1. [Download and run the installer](https://github.com/DiNitride/CSGOAutoMusicVolume/releases)
+1. [Download and run the installer](https://github.com/Welsyntoffie/CSGOAutoMusicVolume/releases)
 2. Launch the program
 3. Select your music player from the drop down list, if it's not there start playing music on it and hit refresh.
 4. Boot CS:GO and once the game is loaded you can click start on the program. Once you're in-game, it may take 10-20 seconds for CS:GO to start sending the updates to the program and for it to start communicating.
